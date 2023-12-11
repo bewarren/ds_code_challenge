@@ -24,7 +24,7 @@ error_threshold = (df['latitude'].isna() | df['longitude'].isna() | df['official
 
 was chosen since if you don't have the latitude, longitude or official suburb then we can't map to a hex value. I tried with just longitude and latitude but this threshold was found to be too low such that it would always fail on the current data set but only by about 3 service requests.
 
-To validate the output data run the below code making sure the data is in the correct path
+To validate the output data run the below code making sure the validation data is in the correct path `data/sr_hex.csv`
 
 ```bash
 python code/validate.py
