@@ -20,17 +20,18 @@ def make_map_array(csvFilePath):
 		# Convert each row into a dictionary 
 		# and add it to data
 		for rows in csvReader:
-			if (rows["official_suburb"]) not in visited_suburbs and rows['official_suburb'] != '':
-				visited_suburbs.append(rows['official_suburb'])
-				if (rows['latitude'] and rows['longitude']):
-					data_dict[rows['official_suburb']] = {
-					"type": "Feature",
-					"geometry": { "type": "Point", "coordinates": [ rows['longitude'], rows['latitude']] },
-					"properties": {'count': 1, 'name': rows['official_suburb']},
-					}
-			else:
-				if (rows['official_suburb'] != ''):
-					data_dict[rows['official_suburb']]['properties']['count'] += 1
+			if (rows['directorate'] == 'WATER AND SANITATION'):
+				if (rows["official_suburb"]) not in visited_suburbs and rows['official_suburb'] != '':
+					visited_suburbs.append(rows['official_suburb'])
+					if (rows['latitude'] and rows['longitude']):
+						data_dict[rows['official_suburb']] = {
+						"type": "Feature",
+						"geometry": { "type": "Point", "coordinates": [ rows['longitude'], rows['latitude']] },
+						"properties": {'count': 1, 'name': rows['official_suburb']},
+						}
+				else:
+					if (rows['official_suburb'] != ''):
+						data_dict[rows['official_suburb']]['properties']['count'] += 1
 
 	
 	return data_dict

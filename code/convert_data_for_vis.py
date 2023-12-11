@@ -21,12 +21,12 @@ def make_dict(csvFilePath):
 		# and add it to data
 		for rows in csvReader:
 			
-			
-			key = rows['official_suburb']
-			if key in data_dict:
-				data_dict[key] += 1
-			else:
-				data_dict[key] = 1
+			if (rows['directorate'] == 'WATER AND SANITATION'):
+				key = rows['official_suburb']
+				if key in data_dict:
+					data_dict[key] += 1
+				else:
+					data_dict[key] = 1
 
 	return data_dict	
     
