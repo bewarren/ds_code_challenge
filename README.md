@@ -34,7 +34,7 @@ python code/validate.py
 
 I build the visualisations using NextJS, the Recharts Library, and MapBox. And the code is hosted on Vercel
 
-The visualisation is hosted at [City of CT Data Visualisation](https://data-visualisation-r61m4677q-bewarren.vercel.app) and my code sits in a separate repositiory [Here](https://github.com/bewarren/data-visualisation)
+The visualisation is hosted at [City of CT Data Visualisation](https://data-visualisation-2whb6cu4n-bewarren.vercel.app) and my code sits in a separate repositiory [Here](https://github.com/bewarren/data-visualisation)
 
 The data was generated with the `code/convert_data_for_map.py` and `code/convert_data_for_vis.py` files and the text files were copied into ts files to display on the maps.
 
